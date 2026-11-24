@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO: Title & description are set dynamically from config.js -->
+  <title>Loading…</title>
+  <meta name="description" content="" />
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Google Fonts: Playfair Display (headings) + Inter (body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>" />
+</head>
+
+<body>
+
+  <!-- ── SCROLL PROGRESS BAR ─────────────────────────── -->
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="scroll-progress" id="scroll-progress"></div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       STICKY HEADER
+       Rendered dynamically by app.js from SITE_CONFIG
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <header id="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+
+        <!-- Logo (image or text fallback) -->
+        <a href="#hero" class="logo-wrap" id="header-logo" aria-label="Homepage">
+          <!-- Injected by app.js -->
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="site-nav" id="desktop-nav" aria-label="Main navigation">
+          <!-- Injected by app.js -->
+        </nav>
+
+        <!-- RERA Badge + Phone + CTA -->
+        <div class="header-actions" id="header-actions">
+          <!-- Injected by app.js -->
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <!-- Injected by app.js -->
+    </nav>
+  </header>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       HERO SECTION
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section id="hero" aria-label="Hero banner">
+
+    <!-- Background image — src injected by app.js -->
+    <div class="hero-bg" id="hero-bg" role="presentation"></div>
+
+    <!-- Hero content -->
+    <div class="hero-content" id="hero-content">
+      <!-- Injected by app.js -->
+    </div>
+
+    <!-- 4-column stats bar -->
+    <div class="hero-stats-bar" id="hero-stats-bar">
+      <div class="container" id="hero-stats-container">
+        <!-- Injected by app.js -->
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       PROPERTY FILTER & GRID
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section id="properties" class="section-pad" aria-label="Property listings">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header fade-in-up">
+        <span class="badge">🏘️ Our Listings</span>
+        <h2 class="section-title">Explore Premium Properties</h2>
+        <p class="section-subtitle">
+          Browse our curated portfolio of residential, commercial, and rental properties
+          across Bangalore's most sought-after neighbourhoods.
+        </p>
+      </div>
+
+      <!-- Category Tabs -->
+      <div class="category-tabs" id="category-tabs" role="tablist" aria-label="Filter by category">
+        <!-- Injected by app.js -->
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar" id="filter-bar" role="search">
+        <!-- Injected by app.js -->
+      </div>
+
+      <!-- Results info row -->
+      <div class="results-info fade-in-up">
+        <span class="results-count">Showing <strong id="results-count">0</strong> properties</span>
+        <span id="active-filters-label" class="text-gold" style="font-size:0.82rem;font-weight:600;"></span>
+      </div>
+
+      <!-- Properties Grid -->
+      <div class="properties-grid" id="properties-grid" role="list">
+        <!-- Injected by app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FLOOR STACK EXPLORER (optional — toggled via config)
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section id="floor-stack" class="section-pad" aria-label="Floor stack explorer">
+    <div class="container">
+
+      <div class="section-header fade-in-up">
+        <span class="badge">🏗️ Project Layout</span>
+        <h2 class="section-title" style="color:#fff;">
+          Explore the Building — <span class="highlight">Floor by Floor</span>
+        </h2>
+        <p class="section-subtitle">
+          Click on any level to discover what's inside.
+        </p>
+      </div>
+
+      <div class="floor-explorer fade-in-up">
+
+        <!-- Visual Stack -->
+        <div class="floor-stack-visual" id="floor-stack-visual" role="list">
+          <!-- Injected by app.js -->
+        </div>
+
+        <!-- Detail Panel -->
+        <div class="floor-detail-panel" id="floor-detail-panel" role="region" aria-live="polite" aria-label="Floor details">
+          <div class="floor-detail-icon" id="fdt-icon">🏢</div>
+          <div class="floor-detail-level" id="fdt-level">Select a floor</div>
+          <div class="floor-detail-name" id="fdt-name">Click any level to explore</div>
+          <div class="floor-detail-desc" id="fdt-desc">
+            Our mixed-use development offers a thoughtfully curated vertical community —
+            from premium residences to world-class amenities, office spaces, and high-street retail.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       TESTIMONIALS
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section id="testimonials" class="section-pad" aria-label="Customer testimonials">
+    <div class="container">
+
+      <div class="section-header center fade-in-up">
+        <span class="badge">❤️ Happy Homeowners</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">
+          Over 1,000 families trust us. Here's why.
+        </p>
+      </div>
+
+      <div class="testimonials-grid" id="testimonials-grid">
+        <!-- Injected by app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       NEIGHBORHOOD HIGHLIGHTS
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section id="neighborhood" class="section-pad" aria-label="Neighborhood highlights">
+    <div class="container">
+
+      <div class="section-header fade-in-up">
+        <span class="badge">📍 Location Intelligence</span>
+        <h2 class="section-title">Everything You Need — Nearby</h2>
+        <p class="section-subtitle">
+          Our projects are strategically located with top-tier infrastructure all around.
+        </p>
+      </div>
+
+      <div class="neighborhood-grid" id="neighborhood-grid">
+        <!-- Injected by app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       VIDEO TOUR
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section id="video-tour" class="section-pad" aria-label="Virtual video tour">
+    <div class="container">
+
+      <div class="section-header center fade-in-up" style="margin-bottom:36px;">
+        <span class="badge">🎬 Virtual Tour</span>
+        <h2 class="section-title" id="video-heading">Experience the Project</h2>
+        <p class="section-subtitle" id="video-subheading"></p>
+      </div>
+
+      <div class="video-wrapper fade-in-up">
+        <iframe
+          id="video-iframe"
+          src=""
+          title="Project Virtual Tour"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       CONTACT SECTION
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section id="contact" class="section-pad" aria-label="Contact us">
+    <div class="container">
+
+      <div class="contact-grid">
+
+        <!-- Left: Info -->
+        <div class="contact-info fade-in-up">
+          <span class="badge">📞 Get in Touch</span>
+          <h2 class="section-title">Let's Find Your <span class="highlight">Perfect Property</span></h2>
+          <p class="contact-desc">
+            Our expert consultants are ready to guide you through every step —
+            from shortlisting to registration. Book a free consultation today.
+          </p>
+          <div class="contact-details" id="contact-details">
+            <!-- Injected by app.js -->
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="contact-form-box fade-in-up stagger-2">
+          <h3>Schedule a Free Consultation</h3>
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-field-lg">
+                <label for="cf-name">Your Name *</label>
+                <input type="text" id="cf-name" name="name" placeholder="Ravi Kumar" required />
+              </div>
+              <div class="form-field-lg">
+                <label for="cf-phone">Phone Number *</label>
+                <input type="tel" id="cf-phone" name="phone" placeholder="+91 98765 43210" required />
+              </div>
+            </div>
+            <div class="form-field-lg">
+              <label for="cf-email">Email Address</label>
+              <input type="email" id="cf-email" name="email" placeholder="ravi@example.com" />
+            </div>
+            <div class="form-field-lg">
+              <label for="cf-interest">I'm Interested In</label>
+              <select id="cf-interest" name="interest">
+                <option value="">Select property type</option>
+                <option value="Buy Apartment">Buy — Apartment</option>
+                <option value="Buy Villa">Buy — Villa</option>
+                <option value="Rent Apartment">Rent — Apartment</option>
+                <option value="Commercial Office">Commercial — Office</option>
+                <option value="Commercial Retail">Commercial — Retail</option>
+                <option value="PG/Co-living">PG / Co-living</option>
+              </select>
+            </div>
+            <div class="form-field-lg">
+              <label for="cf-budget">Budget Range</label>
+              <select id="cf-budget" name="budget">
+                <option value="">Select budget</option>
+                <option value="Under 50 Lakhs">Under ₹50 Lakhs</option>
+                <option value="50-100 Lakhs">₹50 – ₹1 Crore</option>
+                <option value="1-2 Crore">₹1 – ₹2 Crore</option>
+                <option value="2 Crore+">₹2 Crore+</option>
+                <option value="Rental">Monthly Rental</option>
+              </select>
+            </div>
+            <div class="form-field-lg">
+              <label for="cf-message">Message (optional)</label>
+              <textarea id="cf-message" name="message" rows="3" placeholder="Any specific requirements or questions…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="contact-submit-btn">
+              📱 Send via WhatsApp
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FOOTER
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <footer id="site-footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-grid" id="footer-grid">
+        <!-- Injected by app.js -->
+      </div>
+
+      <div class="footer-bottom" id="footer-bottom">
+        <!-- Injected by app.js -->
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       PROPERTY DETAIL MODAL
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="modal-overlay" id="property-modal" role="dialog" aria-modal="true" aria-label="Property details">
+    <div class="modal-box" id="modal-box">
+
+      <!-- Close button -->
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">✕</button>
+
+      <!-- Gallery section -->
+      <div class="modal-gallery">
+        <!-- Gallery tabs: Photos / Floor Plan -->
+        <div class="gallery-tabs" id="gallery-tabs">
+          <button class="gal-tab active" data-tab="photos">📸 Photos</button>
+          <button class="gal-tab" data-tab="floorplan">📐 Floor Plan</button>
+        </div>
+
+        <!-- Main image display -->
+        <div class="gallery-main">
+          <img id="gallery-main-img" src="" alt="Property photo" />
+        </div>
+
+        <!-- Thumbnails -->
+        <div class="gallery-thumbs" id="gallery-thumbs">
+          <!-- Injected by app.js -->
+        </div>
+      </div>
+
+      <!-- Modal body: 2-column layout (main + sidebar) -->
+      <div class="modal-body">
+
+        <!-- Left: Property details -->
+        <div class="modal-main" id="modal-main">
+          <!-- Injected by app.js -->
+        </div>
+
+        <!-- Right: Calculator + Site Visit Form -->
+        <div class="modal-sidebar" id="modal-sidebar">
+          <!-- Injected by app.js -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       FLOATING WHATSAPP BUTTON
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <a
+    id="float-whatsapp"
+    class="float-whatsapp"
+    href="#"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat on WhatsApp"
+    title="WhatsApp Us"
+  >
+    💬
+  </a>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       MOBILE BOTTOM ACTION BAR
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <div class="mobile-action-bar" id="mobile-action-bar" role="navigation" aria-label="Quick actions">
+    <!-- Injected by app.js -->
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       SCRIPTS — config.js must load before app.js
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
